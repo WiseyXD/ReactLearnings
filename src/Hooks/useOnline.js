@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 export default function useOnline() {
-	const [isOnline, setisOnline] = useState(false);
+	const [isOnline, setisOnline] = useState(true);
 
 	function setOffline() {
 		setisOnline(false);
