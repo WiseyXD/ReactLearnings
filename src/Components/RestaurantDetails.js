@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { cloudinarImgUrl } from "../config";
 import Shimmer from "./Shimmer";
@@ -23,7 +23,9 @@ export default function RestaurantDetails() {
 		getRestaurantInfo();
 	}, []);
 
-	return (
+	return restaurant === null ? (
+		<Shimmer />
+	) : (
 		<div className="container">
 			<div className="card">
 				<img
@@ -36,12 +38,16 @@ export default function RestaurantDetails() {
 				<h3>{restaurant.cuisines}</h3>
 				<h5>Restaurant ID : {id}</h5>
 			</div>
-			<div className="menuList">
-				<h3>Recommended</h3>
-				{menu.map((ele) => (
-					<li key={ele.card.info.id}>{ele.card.info.name}</li>
-				))}
-			</div>
+			{menu === undefined ? (
+				<h1>Menu Not Available</h1>
+			) : (
+				<div className="menuList">
+					<h3>Recommended</h3>
+					{menu.map((ele) => (
+						<li key={ele.card.info.id}>{ele.card.info.name}</li>
+					))}
+				</div>
+			)}
 		</div>
 	);
 }

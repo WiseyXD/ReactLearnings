@@ -1,6 +1,7 @@
 import UseState from "../images/UseState.jpg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnline from "../Hooks/useOnline";
 
 export default function Header() {
 	/* 
@@ -13,7 +14,7 @@ export default function Header() {
 			Login button(toogle)
 	 */
 	const [loggedIn, setLoggedIn] = useState(false);
-
+	const isOnline = useOnline();
 	return (
 		<div id="Header" className="container">
 			<img src={UseState} alt="Logo" className="image1" />
@@ -31,8 +32,11 @@ export default function Header() {
 					<Link to="/">
 						<li key={4}>Cart</li>
 					</Link>
+					<Link to="#">
+						<li key={5}>{isOnline ? "Online" : "Offline"}</li>
+					</Link>
 					<Link to="#" onClick={() => setLoggedIn(!loggedIn)}>
-						<li key={5}>{loggedIn ? "Logout" : "Login"}</li>
+						<li key={6}>{loggedIn ? "Logout" : "Login"}</li>
 					</Link>
 				</ul>
 			</div>

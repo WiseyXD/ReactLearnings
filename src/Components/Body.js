@@ -3,26 +3,20 @@ import { URL, cards, cards2 } from "../config";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function searchList(value, restaurantList) {
-	if (value === "") {
-		return restaurantList;
-	}
-	return restaurantList.filter((restaurant) =>
-		restaurant.data.name.toLowerCase().includes(value.toLowerCase())
-	);
-}
+import { searchList } from "../utils/Helper";
+import useIsOnline from "../Hooks/useOnline";
 
 export default function Body() {
 	const [search, setSearch] = useState("");
 	const [click, setClick] = useState(false);
 	const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
 	const [oldList, setOldList] = useState([]);
+	const isOnline = useIsOnline();
 
 	useEffect(() => getRestaurants(), []);
 	useEffect(() => setFilteredRestaurantList(oldList), [search]);
 
-	async function getRestaurants() {
+	const getRestaurants = async () => {
 		try {
 			const response = await fetch(URL);
 			const data = await response.json();
@@ -31,7 +25,8 @@ export default function Body() {
 		} catch (error) {
 			console.log(error);
 		}
-	}
+	};
+
 	return (
 		<div className="container">
 			<div className="search-input">
@@ -70,10 +65,9 @@ export default function Body() {
 			)}
 		</div>
 	);
-
-	/* 
+}
+/* 
 	Body
             Search
 			Restaurant Cards
 	*/
-}

@@ -6,16 +6,13 @@ import Body from "./Components/Body";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./Components/About";
 import Error from "./Components/Error";
-import Contact from "./Components/COntact";
+import Contact from "./Components/Contact";
 import RestaurantCard from "./Components/RestaurantCard";
 import RestaurantDetails from "./Components/RestaurantDetails";
 import Profile from "./Components/Profile";
-function container() {
-	return <Header />;
-}
+import Shimmer from "./Components/Shimmer";
 
 function AppLayout() {
-	console.log("Aryan said Render");
 	return (
 		<>
 			<Header />
@@ -45,7 +42,6 @@ const router = createBrowserRouter([
 					},
 				],
 			},
-
 			{
 				path: "/contact",
 				element: <Contact />,
@@ -62,4 +58,6 @@ const root = document.getElementById("root");
 
 const reactRoot = ReactDOM.createRoot(root);
 
-reactRoot.render(<RouterProvider router={router} />);
+reactRoot.render(
+	<RouterProvider router={router} fallbackElement={<Shimmer />} />
+);
