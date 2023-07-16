@@ -27,6 +27,14 @@ export default function Body() {
 		}
 	};
 
+	if (!isOnline) {
+		return (
+			<div className="container">
+				<h1>Check Internet</h1>
+			</div>
+		);
+	}
+
 	return (
 		<div className="container">
 			<div className="search-input">
