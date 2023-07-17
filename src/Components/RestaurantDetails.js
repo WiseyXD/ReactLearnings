@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { cloudinarImgUrl } from "../config";
+import { MENU_URL, cloudinarImgUrl } from "../config";
 import Shimmer from "./Shimmer";
 
 export default function RestaurantDetails() {
@@ -8,9 +8,7 @@ export default function RestaurantDetails() {
 	const [restaurant, setRestaurant] = useState({});
 	const [menu, setMenu] = useState([]);
 	async function getRestaurantInfo() {
-		const resp = await fetch(
-			`https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=${id}`
-		);
+		const resp = await fetch(MENU_URL + id);
 		const data = await resp.json();
 		setRestaurant(data?.data?.cards[0]?.card?.card?.info);
 		setMenu(

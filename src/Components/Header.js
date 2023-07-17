@@ -35,8 +35,11 @@ export default function Header() {
 					<Link to="#">
 						<li key={5}>{isOnline ? "Online" : "Offline"}</li>
 					</Link>
+					<Link to="/instamart">
+						<li key={6}>Instamart</li>
+					</Link>
 					<Link to="#" onClick={() => setLoggedIn(!loggedIn)}>
-						<li key={6}>{loggedIn ? "Logout" : "Login"}</li>
+						<li key={7}>{loggedIn ? "Logout" : "Login"}</li>
 					</Link>
 				</ul>
 			</div>
