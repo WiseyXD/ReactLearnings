@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { URL, cards, cards2 } from "../config";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { searchList } from "../utils/Helper";
 import useIsOnline from "../Hooks/useOnline";
+import { UserContext } from "../utils/UserContext";
 
 export default function Body() {
 	const [search, setSearch] = useState("");
@@ -12,7 +13,7 @@ export default function Body() {
 	const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
 	const [oldList, setOldList] = useState([]);
 	const isOnline = useIsOnline();
-
+	const { user, setUser } = useContext(UserContext);
 	useEffect(() => getRestaurants(), []);
 	useEffect(() => setFilteredRestaurantList(oldList), [search]);
 
@@ -38,23 +39,41 @@ export default function Body() {
 	return (
 		<div className="container">
 			<div className="search-input">
-				<input
-					type="text"
-					name=""
-					id=""
-					value={search}
-					onChange={(e) => setSearch(e.target.value)}
-				/>
-				<button
-					type="submit"
-					onClick={() => {
-						setClick(!click);
-						const data = searchList(search, oldList);
-						setFilteredRestaurantList(data);
-					}}
-				>
-					Submit-{click ? "True" : "False"}
-				</button>
+				<div>
+					<input
+						type="text"
+						name=""
+						id=""
+						value={search}
+						onChange={(e) => setSearch(e.target.value)}
+					/>
+					<button
+						type="submit"
+						onClick={() => {
+							setClick(!click);
+							const data = searchList(search, oldList);
+							setFilteredRestaurantList(data);
+						}}
+					>
+						Submit-{click ? "True" : "False"}
+					</button>
+				</div>
+
+				<div className="">
+					<input type="text" name="" id="" onChange={(e) => {}} />
+					<button
+						onClick={(e) =>
+							setUser({
+								name: e.target.previousSibling.value,
+								email:
+									e.target.previousSibling.value +
+									"@gmail.com",
+							})
+						}
+					>
+						Set Username
+					</button>
+				</div>
 			</div>
 			{filteredRestaurantList.length === 0 ? (
 				<Shimmer />

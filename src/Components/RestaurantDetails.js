@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MENU_URL, cloudinarImgUrl } from "../config";
 import Shimmer from "./Shimmer";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 export default function RestaurantDetails() {
 	const { id } = useParams();
@@ -15,6 +17,11 @@ export default function RestaurantDetails() {
 			data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
 				?.card?.card?.itemCards
 		);
+	}
+	const dispatch = useDispatch();
+
+	function handleAddItem(item) {
+		dispatch(addItem(item));
 	}
 
 	useEffect(() => {
@@ -42,7 +49,12 @@ export default function RestaurantDetails() {
 				<div className="menuList">
 					<h3>Recommended</h3>
 					{menu.map((ele) => (
-						<li key={ele.card.info.id}>{ele.card.info.name}</li>
+						<li key={ele.card.info.id}>
+							{ele.card.info.name}{" "}
+							<button onClick={() => handleAddItem(ele)}>
+								Add Item
+							</button>
+						</li>
 					))}
 				</div>
 			)}

@@ -76,8 +76,18 @@ input{
 .search-input
 {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
+.flex{
+    display: flex;
+}
+
+.remove-btn
+{
+    
+}
 
 
 /* Shimmer UI */
