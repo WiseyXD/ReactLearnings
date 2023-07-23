@@ -53,3 +53,5 @@ Thumbs.db
 
 # Netlify 404 Error file
 _redirects
+
+.parcel-cache/data.mdb
