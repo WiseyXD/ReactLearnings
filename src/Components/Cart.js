@@ -38,7 +38,7 @@ export default function Cart() {
 				Clear Cart
 			</button>
 			<button onClick={() => handlePopItem(store.cart)}>
-				Remove last Item
+				Pop last Item
 			</button>
 		</div>
 	);
