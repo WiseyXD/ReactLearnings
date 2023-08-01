@@ -55,3 +55,4 @@ Thumbs.db
 _redirects
 
 .parcel-cache/data.mdb
+/coverage

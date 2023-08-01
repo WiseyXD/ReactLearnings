@@ -41,7 +41,7 @@
 86D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\chalk\readme.md133330109054008815 0
 123D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\caniuse-lite\data\features\page-transition-events.js133330109152915335 0
 113D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\css-tree\lib\tokenizer\OffsetToLocation.js133330109103067979 0
-62D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist133345668954914260 1
+62D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist133353725446297281 1
 120D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\caniuse-lite\data\features\css-backdrop-filter.js133330109093871882 0
 87D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\gensync\index.js133330245661156737 0
 123D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\csso\node_modules\css-tree\cjs\syntax\node\Value.cjs133330109138968460 0
@@ -53,7 +53,7 @@
 102D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\caniuse-lite\data\regions\FI.js133330109111907673 0
 120D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\@swc\core\bindings\binding_core_wasm\package.json133330109066482954 0
 129D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\react-redux\es\utils\useIsomorphicLayoutEffect.native.d.ts133344704286343834 0
-68D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\.gitignore133340765039870963 0
+68D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\.gitignore133345742887913173 0
 102D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\caniuse-lite\data\regions\JE.js133330109139834076 0
 107D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\@jridgewell\gen-mapping\package.json133330245660937324 0
 96D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\semver\functions\patch.js133330109067559526 0
@@ -286,7 +286,7 @@
 103D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\picocolors\picocolors.browser.js133330109048954389 0
 111D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\lmdb\dependencies\lmdb-data-v1\libraries133330109051909936 1
 108D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\cosmiconfig\dist\getPropertyByPath.js133330109055469324 0
-80D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\src\Components\Cart.js133345667711939989 0
+80D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\src\Components\Cart.js133346944260488213 0
 89D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\chrome-trace-event133330109054511623 1
 111D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\css-tree\cjs\syntax\atrule\font-face.cjs133330109072092072 0
 99D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\htmlnano\docs\versioned_docs133330109074806344 1
@@ -1687,7 +1687,7 @@
 129D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\hoist-non-react-statics\node_modules\react-is\package.json133344704282930085 0
 96D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\supports-color\browser.js133330109049030905 0
 109D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\css-select\node_modules\domhandler\lib133330109122196781 1
-79D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\Cart.a0ad8882.js133345668954253027 0
+79D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\Cart.a0ad8882.js133353725446077623 0
 93D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\supports-color\license133330109047635178 0
 104D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\@swc\helpers\cjs\_await_value.cjs133330109057362754 0
 95D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\supports-color\readme.md133330109052432641 0
@@ -7996,7 +7996,7 @@
 98D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\.bin\update-browserslist-db133330109204127415 0
 102D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\node_modules\.bin\update-browserslist-db.cmd133330109204241478 0
 80D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\About.3f2e41a3.js133345668954253027 0
-83D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\Cart.a0ad8882.js.map133345668954874402 0
+83D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\Cart.a0ad8882.js.map133353725446267353 0
 81D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\index.61d3354a.css133345668953923112 0
 80D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\index.7271efb6.js133345668953933102 0
 84D:\Aryan Inputs\Web Dev\React\Namaste React\food-delivery\dist\Instamart.a637c389.js133345668953923112 0
