@@ -21,8 +21,19 @@ export default function Body() {
 		try {
 			const response = await fetch(URL);
 			const data = await response.json();
-			setOldList(data?.data?.cards[2]?.data?.data?.cards);
-			setFilteredRestaurantList(data?.data?.cards[2]?.data?.data?.cards);
+			console.log(
+				data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+					?.restaurants
+			);
+			setOldList(
+				data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+					?.restaurants
+			);
+
+			setFilteredRestaurantList(
+				data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+					?.restaurants
+			);
 		} catch (error) {
 			console.log(error);
 		}
@@ -82,10 +93,10 @@ export default function Body() {
 					{filteredRestaurantList.map((restaurant) => (
 						<Link
 							className="card"
-							to={"restaurant/" + restaurant.data.id}
-							key={restaurant.data.id}
+							to={"restaurant/" + restaurant.info.id}
+							key={restaurant.info.id}
 						>
-							<RestaurantCard restaurant={restaurant.data} />
+							<RestaurantCard restaurant={restaurant.info} />
 						</Link>
 					))}
 				</div>
