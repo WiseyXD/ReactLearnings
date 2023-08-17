@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../Hooks/useOnline";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import store from "../utils/store";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
 export default function Header() {
 	/* 
@@ -18,11 +19,12 @@ export default function Header() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const isOnline = useOnline();
 	const cartItems = useSelector((store) => store.cart.items);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	return (
-		<div id="Header" className="container">
-			<img src={UseState} alt="Logo" className="image1" />
-			<div className="navbar">
-				<ul>
+		<div id="Header" className="mx-4 flex justify-between items-center">
+			<img src={UseState} alt="Logo" className="w-[30%]" />
+			<div className="navbar hidden lg:block">
+				<ul className="flex">
 					<Link to="/">
 						<li key={1}>Home</li>
 					</Link>
@@ -47,6 +49,23 @@ export default function Header() {
 					</Link>
 				</ul>
 			</div>
+			<>
+				{isMenuOpen ? (
+					<div className="lg:hidden">
+						<RxCross1
+							size={30}
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+						/>
+					</div>
+				) : (
+					<div className="lg:hidden">
+						<RxHamburgerMenu
+							size={30}
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+						/>
+					</div>
+				)}
+			</>
 		</div>
 	);
 }
