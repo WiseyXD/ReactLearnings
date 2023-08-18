@@ -49,14 +49,15 @@ export default function Body() {
 
 	return (
 		<div className="max-w-7xl w-[90%] mx-auto my-0">
-			<div className="search-input">
-				<div>
+			<div className="flex justify-center items-center gap-x-3">
+				<div className="basis-1/2">
 					<input
 						type="text"
 						name=""
 						id=""
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
+						className="border border-gray-300"
 					/>
 					<button
 						type="submit"
@@ -71,7 +72,13 @@ export default function Body() {
 				</div>
 
 				<div className="">
-					<input type="text" name="" id="" onChange={(e) => {}} />
+					<input
+						type="text"
+						name=""
+						id=""
+						onChange={(e) => {}}
+						className="border border-gray-300 focus:border"
+					/>
 					<button
 						onClick={(e) =>
 							setUser({
