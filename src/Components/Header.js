@@ -33,7 +33,7 @@ export default function Header() {
 							<img
 								src={UseState}
 								alt="Logo"
-								className="w-[30%]"
+								className="w-[40%]"
 							/>
 						</a>
 					</div>

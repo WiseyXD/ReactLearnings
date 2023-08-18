@@ -48,7 +48,7 @@ export default function Body() {
 	}
 
 	return (
-		<div className="container">
+		<div className="max-w-7xl w-[90%] mx-auto my-0">
 			<div className="search-input">
 				<div>
 					<input
@@ -89,7 +89,7 @@ export default function Body() {
 			{filteredRestaurantList.length === 0 ? (
 				<Shimmer />
 			) : (
-				<div className="flex-list">
+				<div className="m-7 flex flex-col justify-center items-center md:grid md:grid-cols-2 md:gap-7 lg:grid lg:grid-cols-3 lg:gap-7">
 					{filteredRestaurantList.map((restaurant) => (
 						<Link
 							className="card"
