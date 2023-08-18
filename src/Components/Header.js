@@ -20,6 +20,7 @@ export default function Header() {
 	const isOnline = useOnline();
 	const cartItems = useSelector((store) => store.cart.items);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	// Header Done
 	return (
 		<>
 			<div id="Header" className="mx-4 flex justify-between items-center">
