@@ -65,6 +65,7 @@ export default function Body() {
 							setClick(!click);
 							const data = searchList(search, oldList);
 							setFilteredRestaurantList(data);
+							console.log(oldList);
 						}}
 					>
 						Submit-{click ? "True" : "False"}

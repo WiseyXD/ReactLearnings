@@ -3,6 +3,6 @@ export const searchList = (value, restaurantList) => {
 		return restaurantList;
 	}
 	return restaurantList.filter((restaurant) =>
-		restaurant.data.name.toLowerCase().includes(value.toLowerCase())
+		restaurant.info.name.toLowerCase().includes(value.toLowerCase())
 	);
 };
