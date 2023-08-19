@@ -99,7 +99,7 @@ export default function Body() {
 			{filteredRestaurantList.length === 0 ? (
 				<Shimmer />
 			) : (
-				<div className="m-7 flex flex-col justify-center items-center md:grid md:grid-cols-2 md:gap-7 lg:grid lg:grid-cols-3 lg:gap-7">
+				<div className="m-7 flex flex-col justify-center items-center gap-5 md:grid md:grid-cols-2 md:gap-7 lg:grid lg:grid-cols-3 lg:gap-7">
 					{filteredRestaurantList.map((restaurant) => (
 						<Link
 							className="card"

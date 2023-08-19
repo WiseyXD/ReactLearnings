@@ -4,15 +4,18 @@ import { useContext } from "react";
 export default function RestaurantCard({ restaurant }) {
 	const { user } = useContext(UserContext);
 	return (
-		<div>
+		<div className="md:h-96 rounded-lg border border-gray-300 p-2 shadow-xl shadow-slate-200">
 			<img
 				src={cloudinarImgUrl + restaurant.cloudinaryImageId}
 				alt="FoodImage"
+				className="w-full rounded-lg"
 			/>
-			<h3>{restaurant.name}</h3>
-			<h5>{restaurant.cuisines.join(", ")}</h5>
-			<span>{restaurant.totalRatingsString}</span>
-			<h3>{user.name}</h3>
+			<h3 className="text-xl font-semibold">{restaurant.name}</h3>
+			<h5 className="text-lg">{restaurant.cuisines.join(", ")}</h5>
+			<span className="text-lg">
+				{restaurant.totalRatingsString} Ratings
+			</span>
+			<h3 className="text-lg">{user.name}</h3>
 		</div>
 	);
 }
