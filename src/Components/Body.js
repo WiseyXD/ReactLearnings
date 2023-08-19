@@ -50,17 +50,19 @@ export default function Body() {
 	return (
 		<div className="max-w-7xl w-[90%] mx-auto my-0">
 			<div className="flex justify-center items-center gap-x-3">
-				<div className="basis-1/2">
+				<div className="basis-1 flex gap-x-2">
 					<input
 						type="text"
 						name=""
 						id=""
 						value={search}
+						placeholder="Search Restaurant..."
 						onChange={(e) => setSearch(e.target.value)}
-						className="border border-gray-300"
+						className="border border-gray-300 px-3 py-1 rounded-lg md:w-80 lg:w-96"
 					/>
 					<button
 						type="submit"
+						className="bg-slate-200 px-2 py-1 rounded-lg md:px-4 lg:px-5 hover:bg-slate-400 ease-in-out duration-200 te"
 						onClick={() => {
 							setClick(!click);
 							const data = searchList(search, oldList);
@@ -68,17 +70,17 @@ export default function Body() {
 							console.log(oldList);
 						}}
 					>
-						Submit-{click ? "True" : "False"}
+						Search
 					</button>
 				</div>
 
-				<div className="">
+				{/* <div className="">
 					<input
 						type="text"
 						name=""
 						id=""
 						onChange={(e) => {}}
-						className="border border-gray-300 focus:border"
+						className="border border-gray-300 "
 					/>
 					<button
 						onClick={(e) =>
@@ -92,7 +94,7 @@ export default function Body() {
 					>
 						Set Username
 					</button>
-				</div>
+				</div> */}
 			</div>
 			{filteredRestaurantList.length === 0 ? (
 				<Shimmer />
