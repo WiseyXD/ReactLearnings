@@ -21,6 +21,7 @@ export default function Body() {
 		try {
 			const response = await fetch(URL);
 			const data = await response.json();
+			console.log(data);
 			console.log(
 				data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
 					?.restaurants
@@ -56,13 +57,13 @@ export default function Body() {
 						name=""
 						id=""
 						value={search}
-						placeholder="Search Restaurant..."
+						placeholder="Search Restaurant from the List..."
 						onChange={(e) => setSearch(e.target.value)}
-						className="border border-gray-300 px-3 py-1 rounded-lg md:w-80 lg:w-96"
+						className="border border-gray-300 px-3 py-1 rounded-lg md:w-80 lg:w-96 animate__backInUp"
 					/>
 					<button
 						type="submit"
-						className="bg-slate-200 px-2 py-1 rounded-lg md:px-4 lg:px-5 hover:bg-slate-400 ease-in-out duration-200 te"
+						className="bg-slate-200 px-2 py-1 rounded-lg md:px-4 lg:px-5 hover:bg-slate-400 ease-in-out duration-200"
 						onClick={() => {
 							setClick(!click);
 							const data = searchList(search, oldList);
@@ -99,7 +100,7 @@ export default function Body() {
 			{filteredRestaurantList.length === 0 ? (
 				<Shimmer />
 			) : (
-				<div className="m-7 flex flex-col justify-center items-center gap-5 md:grid md:grid-cols-2 md:gap-7 lg:grid lg:grid-cols-3 lg:gap-7">
+				<div className="m-7 flex flex-col justify-center items-center gap-5 md:grid md:grid-cols-2 md:gap-7 lg:grid lg:grid-cols-3 lg:gap-7 animate__fadeInUp">
 					{filteredRestaurantList.map((restaurant) => (
 						<Link
 							className="card"
