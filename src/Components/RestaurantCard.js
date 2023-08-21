@@ -3,7 +3,7 @@ import { UserContext } from "../utils/UserContext";
 import { useContext } from "react";
 export default function RestaurantCard({ restaurant }) {
 	const { user } = useContext(UserContext);
-	//Jai Shree Ra
+	//Jai Shree R
 	return (
 		<div className="md:h-96 rounded-lg border border-gray-300 p-2 shadow-xl shadow-slate-200 hover:scale-110 duration-300">
 			<img
