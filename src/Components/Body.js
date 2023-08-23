@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { searchList } from "../utils/Helper";
 import useIsOnline from "../Hooks/useOnline";
 import { UserContext } from "../utils/UserContext";
-// Jai Shree r
+// Jai Sh
 export default function Body() {
 	const [search, setSearch] = useState("");
 	const [click, setClick] = useState(false);
