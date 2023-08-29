@@ -16,7 +16,7 @@ export default function Body() {
 	const { user, setUser } = useContext(UserContext);
 	useEffect(() => getRestaurants(), []);
 	useEffect(() => setFilteredRestaurantList(oldList), [search]);
-	// Jai
+	//
 	const getRestaurants = async () => {
 		try {
 			const response = await fetch(URL);
