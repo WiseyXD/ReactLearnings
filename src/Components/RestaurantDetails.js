@@ -43,12 +43,12 @@ export default function RestaurantDetails() {
 						<h1 className="text-2xl font-semibold ">
 							{restaurant.name}
 						</h1>
-						<div className="flex justify-center items-center text-lg gap-1">
+						<div className="flex justify-center items-center text-lg gap-1        ">
 							{restaurant.avgRating} <AiFillStar />
 						</div>
 					</div>
 					<h3 className="text-lg">{restaurant.costForTwoMessage}</h3>
-					<h3 className="text-lg">{restaurant.cuisines}</h3>
+					<h3 className="text-lg">{restaurant.cuisines.join(", ")}</h3>
 					{/* <h5>Restaurant ID : {id}</h5> */}
 				</div>
 			</div>
