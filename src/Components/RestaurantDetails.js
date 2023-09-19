@@ -32,7 +32,7 @@ export default function RestaurantDetails() {
 	return restaurant === null ? (
 		<Shimmer />
 	) : (
-		<div className="max-w-7xl w-[90%] mx-auto my-0 flex flex-col justify-center items-center">
+		<div className="max-w-7xl w-1/2 mx-auto my-0 flex flex-col justify-center items-center">
 			<div className="">
 				<img
 					src={cloudinarImgUrl + restaurant.cloudinaryImageId}
@@ -43,26 +43,26 @@ export default function RestaurantDetails() {
 						<h1 className="text-2xl font-semibold ">
 							{restaurant.name}
 						</h1>
-						<div className="flex justify-center items-center text-lg gap-1        ">
+						<div className="flex justify-center items-center text-lg gap-1">
 							{restaurant.avgRating} <AiFillStar />
 						</div>
 					</div>
 					<h3 className="text-lg">{restaurant.costForTwoMessage}</h3>
-					<h3 className="text-lg">{restaurant.cuisines.join(", ")}</h3>
+					<h3 className="text-lg">{restaurant.cuisines}</h3>
 					{/* <h5>Restaurant ID : {id}</h5> */}
 				</div>
 			</div>
 			{menu === undefined ? (
 				<h1>Menu Not Available</h1>
 			) : (
-				<div className="">
+				<div className="w-3/4">
 					<h3 className="font-medium text-xl">
 						Recommended - {menu.length} items
 					</h3>
 					{menu.map((ele) => (
 						<li
 							key={ele.card.info.id}
-							className="list-none flex justify-between py-2 my-2 bg-gray-200 px-2 rounded-md"
+							className="w-full list-none flex justify-between py-2 my-2 bg-gray-200 px-2 rounded-md"
 						>
 							<h3 className="text-lg font-normal">
 								{ele.card.info.name}{" "}
