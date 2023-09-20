@@ -1,23 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { app } from "../firebase";
-import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-const db = getDatabase(app);
+const auth = getAuth(app);
+
 export default function Profile() {
-	function updateDB() {
-		set(ref(db, "users/ari"), {
-			name: "Aryan",
-			age: 20,
-			workout: true,
-		});
-	}
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const createUser = () => {
+		createUserWithEmailAndPassword(auth, email, password)
+			.then(alert("Signed in successfull"))
+			.catch((err) => console.log(err));
+	};
 	return (
 		<div>
+			<input
+				type="email"
+				placeholder="email"
+				name="email"
+				onChange={(e) => setEmail(e.target.value)}
+			/>
+			<input
+				type="password"
+				name="password"
+				id=""
+				placeholder="password"
+				onChange={(e) => setPassword(e.target.value)}
+			/>
+
 			<button
-				onClick={updateDB}
+				onClick={createUser}
 				className="cursor-pointer text-3xl font-bold"
 			>
-				Click me
+				SignUp
 			</button>
 		</div>
 	);
