@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import { app } from "../firebase";
-import {
-	getAuth,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-} from "firebase/auth";
-
-const auth = getAuth(app);
+import { useFirebase } from "../utils/firebaseContext";
 
 export default function Profile() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loginEmail, setLoginEmail] = useState("");
 	const [loginPassword, setLoginPassword] = useState("");
+	const firebase = useFirebase();
+	console.log(firebase);
+
 	const createUser = () => {
-		createUserWithEmailAndPassword(auth, email, password)
+		firebase
+			.signUpUser(email, password)
 			.then(alert("Signed in successfull"))
 			.catch((err) => console.log(err));
 	};
-	const loginUser = () => {
-		signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+	const Gsignin = () => {
+		firebase
+			.googleSignin()
 			.then(console.log("Success Login"))
 			.catch((err) => console.log(err));
 	};
@@ -65,7 +63,7 @@ export default function Profile() {
 				/>
 
 				<button
-					onClick={loginUser}
+					onClick={Gsignin}
 					className="cursor-pointer text-3xl font-bold"
 				>
 					Login
