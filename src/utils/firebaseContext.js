@@ -6,6 +6,7 @@ import {
 	signInWithEmailAndPassword,
 	GoogleAuthProvider,
 	signInWithPopup,
+	onAuthStateChanged,
 } from "firebase/auth";
 import { set, ref, getDatabase } from "firebase/database";
 
@@ -36,9 +37,22 @@ export const FirebaseProvider = (props) => {
 	const googleSignin = () => {
 		return signInWithPopup(firebaseAuth, Gprovider);
 	};
+	const authChanged = () => {
+		return onAuthStateChanged(firebaseAuth, (user) => {
+			if (user) {
+				console.log(user);
+				return user;
+			} else {
+				console.log("No user");
+				return false;
+			}
+		});
+	};
 	const putData = (key, data) => set(ref(db, key), data);
 	return (
-		<FirebaseContext.Provider value={{ signUpUser, putData, googleSignin }}>
+		<FirebaseContext.Provider
+			value={{ googleSignin, authChanged, signUpUser, putData }}
+		>
 			{props.children}
 		</FirebaseContext.Provider>
 	);
